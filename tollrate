@@ -1,0 +1,11 @@
+public class TollRates {
+    public static void main(String[] args) {
+        String[] vehicleTypes = {"Car", "Light Commercial vehicles", "Truck", "Three axial Commercial Vehicles","MAV","Oversized vehicle"};
+        double[] tollRates = {85.0, 140.0, 295.0, 320.0,460.0, 560.0};
+        System.out.printf("%-33s %-10s%n", "Vehicle Type", "Toll Rate");
+        System.out.println("------------------------------------------");
+        for (int i = 0; i < vehicleTypes.length; i++) {
+            System.out.printf("%-33s Rs%-9.2f%n", vehicleTypes[i], tollRates[i]);
+        }
+    }
+}
