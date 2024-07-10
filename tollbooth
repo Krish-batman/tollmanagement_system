@@ -1,0 +1,95 @@
+import java.util.Scanner;
+public class tollbooth {
+    int cartotal=0;
+    double cashtotal;
+    tollbooth()
+    {
+        cartotal=0;
+        cashtotal=0.0;
+    }
+    public void payincar()
+    {
+        cartotal++;
+        cashtotal+=85.0;
+    }
+    public void payintruck()
+    {
+        cartotal++;
+        cashtotal+=295.0;
+    }
+    public void payinbus()
+    {
+        cartotal++;
+        cashtotal+=140.0;
+    }
+    public void payinCM()
+    {
+        cartotal++;
+        cashtotal+=320.0;
+    }
+    public void payinMV()
+    {
+        cartotal++;
+        cashtotal+=460.0;
+    }
+    public void payinOV()
+    {
+        cartotal++;
+        cashtotal+=560.0;
+    }
+    public void nopaycar()
+    {
+        cartotal++;
+    }
+    public void display()
+    {
+        System.out.println("Total Number of vehicle passed:"+cartotal);
+        System.out.println("Total amount collected: "+cashtotal);
+    }
+    public static void main(String[] args)
+    {
+        tollbooth obj=new tollbooth();
+        boolean var=true;
+        Scanner scanobj=new Scanner(System.in);
+        while(var)
+        {
+            System.out.println("Press car, bus, truck, cv, mv, ov to pay,\n pass to pass without paying");
+            char input=scanobj.next().charAt(0);
+            if(input=='c')
+            {
+                obj.payincar();
+                System.out.println("Thank you");
+            }
+        else if(input=='m')
+        {
+           obj.payinbus();
+           System.out.println("Thank you"); 
+        }
+        else if(input=='t')
+        {
+            obj.payintruck();
+            System.out.println("Thank you");
+        }
+        else if(input=='b')
+        {
+            obj.payinCM();
+            System.out.println("Thank you");
+        }
+        else if(input=='a')
+        {
+            obj.payinMV();
+            System.out.println("Thank you");
+        }
+        else if(input=='o')
+        {
+            obj.payinOV();
+            System.out.println("Thank you");
+        }
+        else if(input=='n')
+        {
+            obj.nopaycar();
+        }
+        obj.display();
+    }
+    }
+}
